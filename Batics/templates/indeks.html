@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batics</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='batics.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<div class="jumbotron" style="background-image: url({{url_for('static', filename='background.jpeg')}}); background-size: contain;">
+            <h1>Batics</h1>
+        </div>
+        <div class="fcontainer">
+            <nav class="wrapper">
+                <div class="brand">
+                    <div class="ikon"><img src="{{url_for('static', filename='ikon.png')}}" width="80"></div>
+                    <div class="name">Batics</div>
+                </div>
+                <ul class="navigation">
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('info')}}">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	
+<main>
+    <div class="card mid">
+        <h2>Identifikasi Gambar Batik</h2>
+        {% if uploaded_image %}
+        <img class="tengah" src="{{url_for('send_uploaded_image', filename=uploaded_image)}}" width='350'>
+        {% else %}
+            <p>Masukkan Gambar</p>
+        {% endif %}
+        {% if prediction %}
+        <p>Hasil Identifikasi gambar: {{prediction}}</p>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <button type="submit">Identifikasi</button>
+        </form>
+    </div>
+    <div>
+        <div>
+            <article class="card">
+                <h2>Batik Cendrawasih</h2>
+                <img class="tengah" src="{{url_for('static', filename='cenderawasih.jpg')}}" width="400">
+                <p> Kain tradisional ini mengandalkan corak burung cendrawasih yang begitu indah. Burung ini merupakan fauna endemik tanah Papua sehingga turut merepresentasikan wilayah timur Indonesia tersebut. Motif ini menggambarkan keanggunan burung cendrawasih yang juga memiliki sebutan Birds of Paradise (burung dari surga). Keanggunannya tergambar dari bulu serta ekor berwarna-warni. Motif Cendrawasih sangat kental dengan nuansa alam. Selain keindahan fauna tersebut juga biasanya dipadukan dengan corak tumbuhan maupun bunga khas Papua yang begitu cantik nan indah. Berkait keunikan desainnya, para wisatawan tidak ragu untuk membawa pulang beberapa potong pakaian jadi maupun kain motif Cendrawasih tersebut. Motif-motif lain seperti Honai Tifa atau Asmat juga tidak kalah menawan.</p>
+            </article>
+            <article class="card">
+                <h2>Batik Dayak</h2>
+                <img class="tengah" src="{{url_for('static', filename='dayak.jpg')}}" width="400">
+                <p> Pada umumnya motif batik Kalimantan berkembang dari motif ukir kayu khas Dayak, namun ada juga motif yang terinspirasi dari flora dan fauna daerah setempat, serta pengaruh budaya pendatang. Batik Ketapang di Kalimantan Barat misalnya, merupakan batik Kalimantan dengan latar budaya Melayu. Motif Dayak Latar Gringsing merupakan perpaduan motif batik Dayak dengan motif batik Jawa. Berkembang pula batik Tidayu, corak ini terilhami dari tiga budaya sekaligus, yakni Dayak, Melayu, dan Tionghoa yang menghasilkan motif yang menarik. Motif batik Dayak mencerminkan budaya masyarakat Dayak. Istilah Dayak yang mempunyai arti “sungai”. Sehingga batik ini menggambarkan bermacam-macam aktivitas yang sering berkaitan dengan sungai. Secara umum batik Kalimantan memiliki ciri khas warna yang mencolok, berani, dan warna- warni. Dewasa ini berkembang pula batik di provinsi termuda Indonesia, yaitu Kalimantan Utara, batiknya dikenal dengan istilah Batik Borneo. Batik Borneo memiliki corak yang beragam dan motif lebih halus. Eksistensi batik Borneo semakin memperkaya khasanah budaya batik dari Kalimantan.</p>
+            </article>
+            <article class="card">
+                <h2>Batik Ikat Celup</h2>
+                <img class="tengah" src="{{url_for('static', filename='ikcel.jpg')}}" width="400">
+                <p> Pada batik celup ikat adalah proses membuat motif dan warna pada kainputih polos dengan teknik mengikat dan menutup sebagian kain dengan karet / raffia dan plastik gula pasir selanjutnya dicelup pada warna / pewarna kain misalnya wantex. Batik celup sendiri termasuk kedalam seni kriya yang pembuatannya menggunakan tangan (hand skill) tetapi masih memperhatikan aspek fungsionalnya dan sebuah media pemenuhan kebutuhan akan keindahannya.</p>
+            </article>
+            <article class="card">
+                <h2>Batik Insang</h2>
+                <img class="tengah" src="{{url_for('static', filename='insang.jpg')}}" width="400">
+                <p>Tenun Corak Insang adalah tenunan tradisional khas masyarakat Melayu di Kota Pontianak. Tenunan ini dikenal sejak masa Kesultanan Kadriah di bawah kekuasaan Sultan Syarif Abdurrahman Al Qadrie tahun 1771 hingga saat ini. Awalnya Corak Insang hanya digunakan oleh kaum bangsawan di Istana Kadriah. Fungsi tenun Corak Insang adalah sebagai penunjuk identitas status sosial bagi satu keluarga atau satu kelompok dalam kehidupan bermasyarakat dan saat diadakannya pertemuan antar kerajaan. Pada masa lampau, corak ini juga menjadi tolok ukur keterampilan anak gadis dalam menenun. Penggunaan tenun Corak Insang memiliki fungsi lain sebagai barang hadiah ulang tahun bagi raja, sebagai barang pengantar iringan pengantin dan pengantar sirih pinang pada acara pernikahan dan upacara-upacara tradisional lainnya. Kain tenun Corak Insang digunakan sebagai pelengkap pada kain Telok Belangga yang dikenakan oleh kaum laki-laki pada upacara pernikahan, sedangkan bagi kaum perempuan digunakan sebagai baju kurung. Kain Corak Insang menggambarkan peradaban masyarakat Pontianak yang saat itu bermukim di sepanjang pinggiran Sungai Kapuas. Kain Corak Insang mencerminkan kehidupan masyarakat Pontianak yang sangat bergantung dengan Sungai Kapuas. Tenun Corak Ingsang melambangkan nafas dan gerakan dalam kehidupan. Tenun Corak Insang adalah wujud ungkapan rasa cinta kepada alam dan lingkungan serta semangat keseharian yang bersifat berubah-ubah.</p>
+            </article>
+            <article class="card">
+                <h2>Batik Kawung</h2>
+                <img class="tengah" src="{{url_for('static', filename='btk kawung.jpg')}}" width="400">
+                <p>Batik Kawung adalah motif batik yang bentuknya berupa bulatan mirip buah kawung (sejenis kelapa atau kadang juga dianggap sebagai aren atau kolang-kaling) yang ditata rapi secara geometris. Kadang, motif ini juga ditafsirkan sebagai gambar bunga lotus (teratai) dengan empat lembar mahkota bunga yang merekah. Lotus adalah bunga yang melambangkan umur panjang dan kesucian. Batik Kawung berasal dari daerah Yogyakarta.</p>
+            </article>
+            <article class="card">
+                <h2>Batik Megamendung</h2>
+                <img class="tengah" src="{{url_for('static', filename='megamendung.png')}}" width="400">
+                <p>Batik Megamendung merupakan karya seni batik yang identik dan bahkan menjadi ikon batik daerah Cirebon dan daerah Indonesia lainnya. Motif batik ini mempunyai kekhasan yang tidak ditemui di daerah penghasil batik lain. Bahkan karena hanya ada di Cirebon dan merupakan mahakarya, Departemen Kebudayaan dan Pariwisata akan mendaftarkan motif megamendung ke UNESCO untuk mendapatkan pengakuan sebagai salah satu warisan dunia. Motif megamendung sebagai motif dasar batik sudah dikenal luas sampai ke manca negara. Sebagai bukti ketenarannya, motif megamendung pernah dijadikan cover sebuah buku batik terbitan luar negeri yang berjudul Batik Design, karya seorang berkebangsaan Belanda bernama Pepin van Roojen. Kekhasan motif megamendung tidak saja pada motifnya yang berupa gambar menyerupai awan dengan warna-warna tegas, tetapi juga nilai-nilai filosofi yang terkandung di dalam motifnya.</p>
+            </article>
+            <article class='card'>
+                <h2>Batik Parang</h2>
+                <img class="tengah" src="{{url_for('static', filename='btk parang.jpg')}}" width="400">
+                <p>Batik Parang merupakan salah satu motif batik yang paling tua di Indonesia. Parang berasal dari kata Pereng yang berarti lereng. Perengan menggambarkan sebuah garis menurun dari tinggi ke rendah secara diagonal. Susunan motif S jalin-menjalin tidak terputus melambangkan kesinambungan. Bentuk dasar huruf S diambil dari ombak samudra yang menggambarkan semangat yang tidak pernah padam. Batik ini merupakan batik asli Indonesia yang sudah ada sejak zaman keraton Mataram Kartasura (Solo). Batik parang memiliki makna yang tinggi dan mempunyai nilai yang besar dalam filosofinya. Batik motif dari Jawa ini adalah batik motif dasar yang paling tua. Batik parang ini memiliki makna petuah untuk tidak pernah menyerah, ibarat ombak laut yang tak pernah berhenti bergerak. Batik parang juga menggambarkan jalinan yang tidak pernah putus, baik dalam arti upaya untuk memperbaiki diri, upaya memperjuangkan kesejahteraan, maupun bentuk pertalian keluarga.</p>
+            </article>
+            <article class='card'>
+                <h2>Batik Poleng</h2>
+                <img class="tengah" src="{{url_for('static', filename='poleng.png')}}" width="400">
+                <p>Poleng atau corak papan catur adalah pola kotak-kotak sederhana yang terbentuk dari selang-seling warna gelap dan terang, biasanya hitam dan putih. Di Bali, kain dengan motif seperti ini disebut sebagai kain poleng. Kain poleng melambangkan keseimbangan antara dua hal yang bertolak belakang. Corak poleng juga dikenal dalam kebudayaan Jawa, khususnya dalam kerajinan batik.</p>
+            </article>
+            <article class='card'>
+                <h2>Batik Sekar Jagad</h2>
+                <img class="tengah" src="{{url_for('static', filename='sekar jgd.jpg')}}" width="400">
+                <p>Batik Sekar Jagad adalah salah satu motif batik yang berasal dari Solo dan Yogyakarta. Motif ini mengandung makna kecantikan dan keindahan sehingga orang lain yang melihat akan terpesona. Ada pula yang beranggapan bahwa motif Sekar Jagad sebenarnya berasal dari kata "kar jagad" yang diambil dari bahasa Jawa (Kar=peta; Jagad=dunia), sehingga motif ini juga melambangkan keragaman di seluruh dunia. Namun, ada pula yang mengatakan bahwa sekar jagad berasal dari kata sekar yang berarti bunga dan jagad yang berarti dunia. Ini menggambarkan bahwa batik sekar jagat bermakna keindahan dan keanekaragaman bunga di seluruh dunia. Hal ini sekali lagi menekankan bahwa batik sekar jagad memiliki makna filosofis keindahan dan keanekaragaman.</p>
+            </article>
+            <article class='card'>
+                <h2>Batik Tambal</h2>
+                <img class="tengah" src="{{url_for('static', filename='tambal.jpg')}}" width="400">
+                <p>Motif batik tambal memiliki arti tambal bermakna menambal atau memperbaiki hal-hal yang rusak. Dalam perjalanan hidupnya, manusia harus memperbaiki diri menuju kehidupan yang lebih baik, lahir maupun batin. Dahulu, kain batik bermotif tambal dipercaya bisa membantu kesembuhan orang yang sakit. Caranya adalah dengan menyelimuti orang sakit tersebut dengan kain motif tambal. Batik tambal berasal dari keraton Yogyakarta.</p>
+            </article>
+        </div>
+    </div>
+    
+</main>
+
+			<footer>
+				<p>Muhammad Sabran &#169; 2022, Institut Teknologi Kalimantan</p>
+			</footer>
+</body>
+
+</html>

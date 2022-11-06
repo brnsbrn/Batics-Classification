@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+*, html, body, footer {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+ }
+ 
+ .fcontainer {
+  display: flex;
+  width: 100%;
+
+ }
+
+ .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  font-size: 20px;
+ }
+ 
+ .brand {
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  margin-left: 0;
+ }
+
+
+ .name {
+  font-weight: 700;
+  font-size: 25px;
+  color: #ffcc00;
+  margin-top: 15px;
+ }
+  
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+}
+
+.navigation > li {
+  list-style-type: none;
+  padding: 15px;
+}
+
+.navigation > li > a {
+  color: #ffcc00;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.navigation > li > a:hover {
+  font-weight: bold;
+  transition: all .3s ease-in-out;
+}
+  
+ h2 {
+    color: #ffcc00;
+    text-align: center;
+ } 
+ 
+ .mid {
+  text-align: center;
+ }
+
+ main div div p {
+  text-align: justify;
+ }
+  
+ footer {
+    padding: 20px;
+    color: #ffcc00;
+    background-color: black;
+    text-align: center;
+    font-weight: bold;
+ }
+
+ .card {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  border-style: groove;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+ .jumbotron {
+    padding: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffcc00;
+    font-family: 'Quicksand', sans-serif;
+ }
+
+
+main {
+    padding: 20px;
+    overflow: auto;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media screen and (max-width: 1000px) {
+    #content,
+    aside {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+ 
+  header {
+    display: inline;
+ }
+
+ img.tengah {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}

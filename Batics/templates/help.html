@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Help</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='batics.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<header>
+		<div class="jumbotron" style="background-image: url({{url_for('static', filename='background.jpeg')}}); background-size: contain;">
+            <h1>Batics</h1>
+        </div>
+        <div class="fcontainer">
+            <nav class="wrapper">
+                <div class="brand">
+                    <div class="ikon"><img src="{{url_for('static', filename='ikon.png')}}" width="80"></div>
+                    <div class="name">Batics</div>
+                </div>
+                <ul class="navigation">
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('info')}}">Help</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	
+<main>
+    <div style="line-height: 6;">
+        <div class="card mid">
+            <h2>Cara Menggunakan Batics</h2>
+            <img class="tengah" src="{{url_for('static', filename='choose.jpeg')}}">
+            <p class="mid">Klik tombol Choose File, lalu pilih foto motif batik yang ingin dianalisa</p>
+            <img class="tengah" src="{{url_for('static', filename='identify.jpeg')}}">
+            <p class="mid">Setelah memilih foto, klik tombol identifikasi agar website dapat segera menganalisa motif batik</p>
+            <img class='tengah' src="{{url_for('static', filename='hasil.jpeg')}}">
+            <p class="mid">Maka website Batics akan menampilkan hasil identifikasi motif batik dari foto yang diupload user</p>
+        </div>
+    </div>
+    
+</main>
+
+			<footer>
+				<p>Muhammad Sabran &#169; 2022, Institut Teknologi Kalimantan</p>
+			</footer>
+</body>
+
+</html>
